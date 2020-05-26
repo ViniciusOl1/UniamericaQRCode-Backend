@@ -8,7 +8,7 @@ module.exports = {
         return res.json(qrcode);
     },
     async create(req, res){
-        const data  = moment.tz("America/Sao_Paulo").format("DD-MM-YYYY");
+        const data  = moment.tz("America/Sao_Paulo");
         const qr = cod.image(data, { type: 'svg' });
         qrcode = `./src/assets/qrcode/${data}.svg`;
         if (fs.existsSync(qrcode)){
